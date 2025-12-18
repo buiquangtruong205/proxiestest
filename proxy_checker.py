@@ -6,7 +6,7 @@ Công cụ check proxy live/die sử dụng logic từ project lớn.
 
 Logic check (RFC-compliant):
 1. TCP Connect Test
-2. SOCKS5 Handshake (RFC 1928 + 1929)
+2. SOCKS5 Handshake (RFC 1928 + 1929)     .
 3. HTTP Proxy Handshake (RFC 7230)
 4. HTTPS CONNECT Handshake (RFC 7231)
 5. Verify Forward (Judge URL)
