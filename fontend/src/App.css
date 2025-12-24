@@ -1,0 +1,358 @@
+/* CSS giao diện đẹp mắt hơn một chút */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+}
+
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* Protocol selector */
+.protocol-group {
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.select-field {
+  padding: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: white;
+}
+
+.input-field {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  flex: 1;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+}
+
+.input-field.port {
+  flex: 0.3;
+}
+
+.check-btn {
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.check-btn:hover {
+  background: #0056b3;
+}
+
+.check-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.result-box {
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 8px;
+  background: #f8f9fa;
+  border: 1px solid #eee;
+  animation: fadeIn 0.3s ease;
+}
+
+.result-box.status-live {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+.result-box.status-dead {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.status-badge {
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.debug-info {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+pre {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Paste proxy input styling */
+.paste-group {
+  flex-direction: column;
+}
+
+.paste-field {
+  font-size: 1rem;
+  font-family: 'Consolas', 'Monaco', monospace;
+  background: #f8f9fa;
+  border: 2px dashed #007bff;
+}
+
+.paste-field:focus {
+  border-style: solid;
+  background: white;
+}
+
+/* Parsed info display */
+.parsed-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  padding: 12px;
+  background: #e8f4fd;
+  border-radius: 8px;
+  border: 1px solid #b8daff;
+}
+
+.parsed-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.parsed-label {
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.85rem;
+}
+
+.parsed-value {
+  font-family: 'Consolas', 'Monaco', monospace;
+  color: #007bff;
+  background: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Result card styles - status colors */
+.result-card.status-live {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+.result-card.status-dead {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+/* Textarea styling */
+.textarea-field {
+  resize: vertical;
+  min-height: 120px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  line-height: 1.5;
+}
+
+.proxy-count {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 5px;
+  text-align: right;
+}
+
+/* Stats panel */
+.stats-panel {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  justify-content: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background: white;
+  min-width: 80px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.stat-total .stat-value {
+  color: #007bff;
+}
+
+.stat-live .stat-value {
+  color: #28a745;
+}
+
+.stat-dead .stat-value {
+  color: #dc3545;
+}
+
+/* Results list */
+.results-list {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-height: none;
+  overflow-y: visible;
+  padding-right: 5px;
+}
+
+.result-card {
+  position: relative;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  min-height: auto;
+  overflow: visible;
+}
+
+.proxy-string {
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  flex: 1;
+  margin: 0 12px;
+  word-break: break-all;
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.latency {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.result-body {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  padding-top: 5px;
+}
+
+.result-body p {
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.details-btn {
+  display: none;
+}
+
+.json-data {
+  display: none;
+}
+
+/* Protocol status styling */
+.protocol-live {
+  color: #28a745;
+  font-weight: bold;
+  background: #d4edda;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.protocol-dead {
+  color: #dc3545;
+  font-weight: bold;
+  background: #f8d7da;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.protocol-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
